@@ -9,7 +9,7 @@ import java.util.*
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
-    @Inject lateinit var test : daggerfunction// by lazy {  }
+    @Inject lateinit var test : daggerfunction
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
 class daggerfunction @Inject constructor(){
     @Provides
     fun randomNumber() : Int = Random().nextInt(100)
-
 }
 @Component(modules = arrayOf(daggerfunction::class))
 interface daggerCompat{
