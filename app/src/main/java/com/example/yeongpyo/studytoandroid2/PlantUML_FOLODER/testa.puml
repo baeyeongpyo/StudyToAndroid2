@@ -1,0 +1,11 @@
+@startuml
+
+A -> B : Send
+A <-- B : Recive
+
+Alice -> Bob: Authentication Request
+Alice <- Bob: Authentication Response
+
+
+
+@enduml

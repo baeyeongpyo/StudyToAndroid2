@@ -1,0 +1,32 @@
+@startuml
+
+interface Observer {
+  + {abstract} void update();
+}
+
+class Subject {
+  - List<Observer> observers
+  + add(Observer o)
+  + remove(Observer o)
+  + void notifyObservers()
+}
+class ObserverA {
+  + void update();
+}
+
+class ObserverB {
+  + void update();
+}
+
+Observer <|-- ObserverA
+Observer <|--|> ObserverB
+Subject -right-o Observer
+
+title Observer Pattern
+
+note top of Subject
+  <b>for</b> observer <b>in</b> observers
+  observer.update();
+end note
+
+@enduml
